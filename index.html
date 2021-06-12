@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyWayチュートリアル</title>
+  <script src="https://cdn.webrtc.ecl.ntt.com/skyway-4.4.1.js"></script>    
+</head>
+<body>
+    <video id="my-video" width="400px" autoplay muted playsinline></video>
+    <p id="my-id"></p>
+</body>
+
+<script>
+    const peer = new Peer({
+        key: 'e9671480-8cac-4013-9a53-701e9a6fb40d',
+        debug: 3
+    });
+    peer.on('open', () => {
+        document.getElementById('my-id').textContent = peer.id;
+    });
+  </script>
+
+</html>
